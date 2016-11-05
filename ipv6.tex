@@ -52,6 +52,9 @@ Adressen aus einem global gültigen Adressbereich zugewiesen werden (bzw. sich a
 Sowohl Endgeräte als auch Knoten könnten direkt Verbindungen mit dem gesamten Internet aufbauen.
 Eine Übersetzung der internen Adressen wäre nicht mehr nötig.
 
+Die bisherigen ``lokalen'' IPv6 Adressen wären weiterhin für die interne Kommunikation im Freifunk Netz
+nutzbar.
+
 \section{Fragen und Antworten}
 \subsection*{Warum ist IPv6 überhaupt nötig?}
 Der Vorrat von IPv4 Adressen ist verbraucht. In Zukunft werden nicht mehr alle Dienste mittels IPv4 erreichbar sein.
@@ -90,6 +93,14 @@ durchaus die ausgehenden Verbindungen über einen anderen Gateway erfolgen,
 als die eingehenden Verbindungen. Somit ist eine Firewall in den Gateways
 nicht mehr so einfach möglich. (Und im Allgemeinen auch nicht gewollt.)
 
+\subsubsection*{Wenn jemand meine IPv6 bekommen hat, dann kann er einen Port Scan
+machen und rausfinden, was noch so auf meinem Gerät läuft. Das geht bisher mit NAT nicht!}
+Das liegt nicht an NAT, sondern wieder an der Firewall. Diese Sicherheit muss aber auf den
+Endgeräten umgessetzt werden und ist keine Aufgabe eines offenen Netzes.
+
+Zusätzlich ist es auch zur Zeit schon möglich den selben Portscan innerhalb
+des Freifunk Netzes durchzuführen. Wir betreiben ein offenes Netz für jeden.
+
 \subsubsection*{Durch NAT tauche ich aber nicht direkt im Netz auf. So kann ich nicht identifiziert werden.}
 Das ist korrekt. Bei IPv6 wird (üblicherweise) ein Teil der Adresse aus der MAC-Adresse des Endgeräts gebildet. Diese MAC ist einzigartig im Netz und ändert sich auch nicht. Somit wäre eine Verfolgung des Endgeräts durch das Netz möglich.
 \emph{Aber: }Bei IPv6 hat ein Gerät nicht nur eine Adresse sondern kann diverse verschiedene Adressen haben.
@@ -99,5 +110,8 @@ Um die Identität der Nutzer besser zu schützen wurden die IPv6 Privacy Extensi
 Wenn Privacy Extensions (PEX) aktiviert sind, generiert das Endgerät sich regelmäßig
 neue IPv6 Adressen. Die generierten Adressen sollten zufällig und nicht zu einer MAC-Adresse rückverfolgbar sein. Wenn das Endgerät nun eine Verbindung aufbaut, wird diese zufällige Adresse genutzt.
 
+Diese Erweiterungen sind in praktisch allen Systemen heutzutage standardmäßig aktiviert\footnote{Siehe auch den Heise Artikel von 2011 unter \url{http://heise.de/-1204783}}. Microsoft Windows unterstützt PEX seit Windows XP, Android seit Version 4.0\footnote{%
+Aktueller Marktanteil für Geräte mit Android $ < 4.0 $ ca. 2 \% } und iOS seit Version 4.3\footnote{%
+Aktueller Marktanteil für Geräte mit iOS $ < 4.3 $ weniger als 1 \% }.
 
 \end{document}
